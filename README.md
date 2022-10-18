@@ -1,24 +1,61 @@
-# README
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Blog App
 
-Things you may want to cover:
+> Interactive website for the Analytical Chemistry Digital Summit 2022
 
-* Ruby version
 
-* System dependencies
+## Built With
 
-* Configuration
+- Major languages: ruby, css, ruby on rails
 
-* Database creation
 
-* Database initialization
+## Live Demo 
 
-* How to run the test suite
+[comming soon]()
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## Getting Started
 
-* ...
+-
+
+### Prerequisites
+
+### Setup
+
+### Install
+
+### Usage
+
+### Run tests
+
+### Deployment
+
+
+
+## Authors
+
+👤 **Ja'fer Yousef**
+
+- GitHub: [@githubhandle](https://github.com/jaferIdrees)
+- Twitter: [@twitterhandle](https://twitter.com/jafel_l)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/jaferll)
+
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/jaferIdrees/blog_app/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Microverse team
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
