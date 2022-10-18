@@ -1,5 +1,5 @@
 class AddUserToPosts < ActiveRecord::Migration[7.0]
   def change
-    add_reference :posts, :user, null: false, foreign_key: 'author_id', index: true
+    add_reference :posts, :author, null: false, foreign_key:  { to_table: :users }, index: true
   end
 end
