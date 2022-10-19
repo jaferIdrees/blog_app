@@ -2,7 +2,7 @@
 
 # Blog App
 
-> Interactive website for the Analytical Chemistry Digital Summit 2022
+> Interactive API with database on which you can add users, posts, comments, and likes with the related associations
 
 
 ## Built With
@@ -33,7 +33,7 @@
 
 
 
-## Authors
+## Author
 
 👤 **Ja'fer Yousef**
 
