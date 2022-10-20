@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :posts, inverse_of: 'author', foreign_key: 'author_id'
+  has_many :posts, inverse_of: 'author', foreign_key: 'author_id', counter_cache: :posts_counter
   has_many :comments, inverse_of: 'author', foreign_key: 'author_id'
   has_many :likes, inverse_of: 'author', foreign_key: 'author_id'
   def recent_posts
