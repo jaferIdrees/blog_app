@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-  
-
   context 'Test Comment comments_counter method' do
     # Add some user
     first_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')

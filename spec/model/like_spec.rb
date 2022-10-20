@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Like, type: :model do
-  
-
   context 'Test Like likes_counter method' do
     # Add some user
     first_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
@@ -14,12 +12,11 @@ RSpec.describe Like, type: :model do
     Like.create(post: first_post, author: first_user)
     Like.create(post: first_post, author: first_user)
     Like.create(post: first_post, author: first_user)
-    
 
     it 'first_post.likes_counter should equal 5' do
       expect(first_post.likes_counter).to eq(5)
     end
-    
+
     it 'first_user.likes_counter should equal 5' do
       expect(first_post.likes_counter).to eq(5)
     end
