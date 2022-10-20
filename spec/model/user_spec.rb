@@ -20,7 +20,7 @@ RSpec.describe User, type: :model do
     # Add some user
     first_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
 
-    #Add 4 posts for first_user
+    # Add 4 posts for first_user
     Post.create(author: first_user, title: '1st', text: 'This is my first post')
     Post.create(author: first_user, title: '2nd', text: 'This is my 2nd post')
     Post.create(author: first_user, title: '3rd', text: 'This is my 3rd post')
@@ -33,6 +33,5 @@ RSpec.describe User, type: :model do
     it 'first_user.posts_counter should equal 4' do
       expect(first_user.posts_counter).to eq(4)
     end
-
   end
 end
