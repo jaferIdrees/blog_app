@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Posts controller', type: :request do
-
   context 'testing posts index route' do
     before(:example) { get '/users/:user_id/posts' }
     it 'Should rennder posts show page' do
@@ -15,8 +14,8 @@ RSpec.describe 'Posts controller', type: :request do
     it 'http status to be OK' do
       expect(response).to have_http_status(:ok)
     end
-  end 
-  
+  end
+
   context 'testing posts show route' do
     before(:example) { get '/users/:user_id/posts/:id' }
     it 'Should rennder posts show page' do
