@@ -1,1 +1,14 @@
-<h1>Here is a list of posts for a given user</h1>
+<%= image_tag @user.photo%>
+<h1><%= @user.name%></h1>
+<small>Number of posts:<%= @user.posts_counter%></small>
+<% @posts.each do |post| %>
+  <div class= 'post_card'>
+    <h3><%= post.title%></h3>
+    <p><%= post.text%></p>
+    <small>Comments:<%= post.comments_counter%></small>
+    <small>Likes:<%= post.likes_counter%></small>
+  </div>
+  <% post.recent_comments.each do |comment|%>
+    <p><%= User.find(comment.author_id).name %> : <%= comment.text%></p>
+  <% end %>
+<% end %>

@@ -9,4 +9,8 @@
     <small>Likes:<%= post.likes_counter%></small>
   </div>
 <% end %>
-<%= link_to 'All posts', "/users/#{@user.id}/posts"%>
+<% if @user.recent_posts.size.zero? %>
+  <p>No posts yet!</p>
+<% else %>
+  <%=link_to 'All posts', "/users/#{@user.id}/posts"%>
+<% end %>
