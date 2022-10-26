@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+ .post_card {
+  border: 1px solid red;
+  margin-bottom: 1em;
+ }

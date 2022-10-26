@@ -1,1 +1,12 @@
-<h1>Show selected user information.</h1>
+<%= image_tag @user.photo%>
+<h1><%= @user.name%></h1>
+<p><%= @user.bio%></p>
+<% @user.recent_posts.each do |post| %>
+  <div class= 'post_card'>
+    <h3><%= post.title%></h3>
+    <p><%= post.text%></p>
+    <small>Comments:<%= post.comments_counter%></small>
+    <small>Likes:<%= post.likes_counter%></small>
+  </div>
+<% end %>
+<%= link_to 'All posts', "/users/#{@user.id}/posts"%>

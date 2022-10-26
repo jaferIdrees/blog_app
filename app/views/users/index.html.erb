@@ -3,11 +3,9 @@
   <tbody>
     <% @users.each do |user| %>
     <tr>
-     
         <td><%= image_tag user.photo%></td>
-         <td><%= link_to(user.name, "users/#{user.id}")%></td>
+        <td><%= link_to(user.name, "users/#{user.id}")%></td>
         <td><%= user.posts_counter %></td>
-      
     </tr>
     <% end %>
   </tbody>
