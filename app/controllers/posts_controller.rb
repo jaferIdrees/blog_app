@@ -11,7 +11,7 @@ class PostsController < ApplicationController
   def new
     post = Post.new
     respond_to do |format|
-      format.html { render :new }
+      format.html { render :new_post, locals: {post: post} }
     end
   end
 end
