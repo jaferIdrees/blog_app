@@ -6,6 +6,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @like = Like.new
   end
 
   def new
@@ -26,5 +27,11 @@ class PostsController < ApplicationController
       flash.now[:error] = 'Error: Post could not be saved'
       render inline: '<p>Error: Post could not be saved<p>'
     end
+  end
+
+  def like
+    post = Post.find(params[:id])
+    Like.create(post: post, author: current_user)
+    redirect_to "/users/:user_id/posts/#{post[:id]}"
   end
 end

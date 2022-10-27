@@ -8,3 +8,5 @@
     <p><%= User.find(comment.author_id).name %> : <%= comment.text%></p>
   <% end %>
 </div>
+  <%=link_to 'Add Comment', "/users/:user_id/posts/#{@post[:id]}/new_comment"%>
+  <%= render 'like', like: @like, post_id: @post[:id]%>
