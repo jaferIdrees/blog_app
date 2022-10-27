@@ -1,0 +1,12 @@
+
+<%= form_with model: post, url: url, method: method, local: true, scope: :post do |f|%>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title%>
+  </div>
+  <div>
+    <%= f.label :text %>
+    <%= f.text_area :text, {cols: 40, rows:20}%>
+  </div>
+  <%= f.submit 'Add Post'%>
+<% end %>
