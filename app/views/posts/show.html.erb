@@ -1,1 +1,10 @@
-<h1>Here is a given post for a given user</h1>
+<div class= 'post_card'>
+  <h4><%= @post.title%> by <%= User.find(@post.author_id).name%></h4>
+  <small>Comments: <%= @post.comments_counter%>, Likes:<%= @post.likes_counter%></small>
+  <p><%= @post.text %></p>
+</div>
+<div class='comments_container'>
+  <% @post.comments.each do |comment|%>
+    <p><%= User.find(comment.author_id).name %> : <%= comment.text%></p>
+  <% end %>
+</div>

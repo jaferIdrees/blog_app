@@ -1,1 +1,19 @@
-<h1>Show selected user information.</h1>
+<div class='user_card'>
+  <%= image_tag @user.photo%>
+  <h1><%= @user.name%></h1>
+  <small>Number of posts:<%= @user.posts_counter%></small>
+</div>
+<p>Bio <br/><%= @user.bio%></p>
+<% @user.recent_posts.each do |post| %>
+  <div class= 'post_card'>
+    <h3><%=link_to post.title, "/users/#{@user.id}/posts/#{post.id}"%></h3>
+    <p><%= post.text%></p>
+    <small>Comments:<%= post.comments_counter%></small>
+    <small>Likes:<%= post.likes_counter%></small>
+  </div>
+<% end %>
+<% if @user.recent_posts.size.zero? %>
+  <p>No posts yet!</p>
+<% else %>
+  <%=link_to 'All posts', "/users/#{@user.id}/posts"%>
+<% end %>
