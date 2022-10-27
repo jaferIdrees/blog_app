@@ -1,14 +1,6 @@
 <h1>Listing Users</h1>
 <table>
   <tbody>
-    <% @users.each do |user| %>
-    <tr>
-      <div class='user_card'>
-        <%= image_tag user.photo%>
-        <h2><%= link_to(user.name, "users/#{user.id}")%></h2>
-        <small>Number of posts:<%= user.posts_counter%></small>
-      </div>
-    </tr>
-    <% end %>
+    <%= render @users %>
   </tbody>
 </table>
