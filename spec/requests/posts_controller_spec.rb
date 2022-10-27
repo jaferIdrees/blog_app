@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Posts controller', type: :request do
   context 'testing posts index route' do
-    before(:example) { get '/users/:user_id/posts' }
+    before(:example) { get '/users/1/posts' }
     it 'Should rennder posts show page' do
       expect(response).to render_template('index')
     end

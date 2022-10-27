@@ -20,18 +20,20 @@
 -
 
 ### Prerequisites
+- ruby version (3.0) or above
+- Rails 7.0 or above
+- Postgresql db
 
-### Setup
-
-### Install
-
+### Setup & Installation
+- Clone the repo (https://github.com/jaferIdrees/blog_app.git)
+- run (bundle install) command
 ### Usage
+- on your console run (rails server command)
+- on the browser navigate to ('http://localhost:3000/')
+- Enjoy ...........
 
 ### Run tests
-
-### Deployment
-
-
+- on your console run (rspec) command
 
 ## Author
 
