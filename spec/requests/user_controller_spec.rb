@@ -26,7 +26,7 @@ RSpec.describe 'Users controller', type: :request do
     end
 
     it 'Rendered page should include "Show selected user information"' do
-       expect(response.body).to include(first_user.bio)
+      expect(response.body).to include(first_user.bio)
     end
 
     it 'http status to be OK' do

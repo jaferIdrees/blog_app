@@ -16,7 +16,7 @@ RSpec.describe 'Posts controller', type: :request do
     it 'http status to be OK' do
       expect(response).to have_http_status(:ok)
     end
-  end 
+  end
   context 'testing posts index route' do
     first_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
     first_post = Post.create(author: first_user, title: 'Hello', text: 'This is my first post')
