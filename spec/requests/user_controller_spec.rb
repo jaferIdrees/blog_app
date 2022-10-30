@@ -19,13 +19,14 @@ RSpec.describe 'Users controller', type: :request do
   end
 
   context 'testing users show route' do
-    before(:example) { get '/users/:id' }
+    first_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
+    before(:example) { get "/users/#{first_user.id}" }
     it 'Should rennder users show page' do
       expect(response).to render_template('show')
     end
 
     it 'Rendered page should include "Show selected user information"' do
-      expect(response.body).to include('Show selected user information')
+       expect(response.body).to include(first_user.bio)
     end
 
     it 'http status to be OK' do
