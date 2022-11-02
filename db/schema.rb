@@ -27,8 +27,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_02_135740) do
   create_table "likes", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "author_id", null: false
     t.bigint "post_id", null: false
+    t.bigint "author_id", null: false
     t.index ["author_id"], name: "index_likes_on_author_id"
     t.index ["post_id"], name: "index_likes_on_post_id"
   end
@@ -36,8 +36,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_02_135740) do
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "text"
-    t.integer "comments_counter", default: 0
-    t.integer "likes_counter", default: 0
+    t.integer "comments_counter"
+    t.integer "likes_counter"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "author_id", null: false
@@ -46,9 +46,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_02_135740) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "photo"
+    t.text "photo"
     t.text "bio"
-    t.integer "posts_counter", default: 0
+    t.integer "posts_counter"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
@@ -60,7 +60,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_02_135740) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
-    t.integer "failed_attempts", default: 0, null: false
     t.string "unlock_token"
     t.datetime "locked_at"
     t.index ["email"], name: "index_users_on_email", unique: true
