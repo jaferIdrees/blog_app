@@ -4,4 +4,4 @@
     <%= render @users %>
   </tbody>
 </table>
-<%=link_to 'Add Post', '/posts/new'%>
+<%=link_to 'Add Post', "/users/#{current_user.id}/posts/new"%>
