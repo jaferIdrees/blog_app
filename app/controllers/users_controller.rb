@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all
+    if current_user
+      @users = User.all.order(id: :asc)
+      @current = current_user
+    else
+      redirect_to new_user_session_path, notice: 'You are not logged in.'
+    end
   end
 
   def show
