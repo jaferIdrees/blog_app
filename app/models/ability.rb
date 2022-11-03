@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
@@ -8,10 +6,12 @@ class Ability
     can :read, Comment, public: true
 
     return unless current_user.present?
+
     can :read, Post, author: current_user
     can :destroy, Post, author: current_user
 
     return unless current_user.present?
+
     can :read, Comment, author: current_user
     can :destroy, Comment, author: current_user
 
