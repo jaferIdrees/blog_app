@@ -5,7 +5,17 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root '/',to: "users#index"
-  devise_for :user #, :path => '', :path_names => { :sign_in => "login", :sign_out => "logout", :sign_up => "register" }
+  #devise_for :user #, :path => '', :path_names => { :sign_in => "login", :sign_out => "logout", :sign_up => "register" }
+  # modefy devise routes to accept json
+  devise_for :users, path: '', path_names: {
+    sign_in: 'login',
+    sign_out: 'logout',
+    registration: 'signup'
+  },
+  controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
+  }
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   root 'users#index'
   delete 'users/:user_id/posts/:id', to: 'posts#destroy'
