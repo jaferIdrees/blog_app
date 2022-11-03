@@ -6,17 +6,12 @@ class Ability
     can :read, Comment, public: true
 
     return unless current_user.present?
-
-    can :read, Post, author: current_user
-    can :destroy, Post, author: current_user
-
-    return unless current_user.present?
-
-    can :read, Comment, author: current_user
-    can :destroy, Comment, author: current_user
+    can :read, :all
+    can [:create, :read, :update, :destroy], Post, author: current_user
+    can [:create, :read, :update, :destroy], Comment, author: current_user
 
     return unless current_user.role == 'admin' # additional permissions for administrators
 
-    can :manage, :all
+    can [:create, :read, :update, :destroy], :all
   end
 end
