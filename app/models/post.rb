@@ -5,8 +5,8 @@ class Post < ApplicationRecord
   after_initialize :init
 
   belongs_to :author, class_name: 'User', counter_cache: :posts_counter
-  has_many :comments, counter_cache: :comments_counter
-  has_many :likes, counter_cache: :likes_counter
+  has_many :comments, dependent: :destroy, counter_cache: :comments_counter
+  has_many :likes, dependent: :destroy, counter_cache: :likes_counter
 
   def recent_comments
     comments.first(5)
