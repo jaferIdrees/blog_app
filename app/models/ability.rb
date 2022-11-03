@@ -3,7 +3,17 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user)
+  def initialize(current_user)
+    can :read, Post, public: true
+    can :read, Comment, public: true
+
+    return unless current_user.present?
+    can :read, Post, author: current_user
+    can :destroy, Post, author: current_user
+
+    return unless current_user.present?
+    can :read, Comment, author: current_user
+    can :destroy, Comment, author: current_user
     # Define abilities for the user here. For example:
     #
     #   return unless user.present?

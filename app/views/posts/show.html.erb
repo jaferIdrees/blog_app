@@ -8,11 +8,14 @@
       <p><strong>No comments yet</strong></p>
     <% else %>
       <%@comments.includes(:author).each do |comment|%>
-          <p><strong><%= comment.author.name %>: </strong><%= comment.text %></p>
+          <p><strong><%= comment.author.name %>: </strong><%= comment.text %>
+          <% if can? :destroy, comment %>
+            <%=link_to "🗑del", user_post_comment_path(comment.author_id, @post, comment),method: :delete, data: { turbo_method: :delete }  %></p>
+          <% end %>
       <%end%>
     <% end %>
   </div>
-
+  
   <%= render "form" %>
 
   <%= link_to "Back to posts", user_posts_path, class: 'all-post-btn' %>
