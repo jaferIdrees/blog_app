@@ -4,4 +4,6 @@
     <%= render @users %>
   </tbody>
 </table>
+<% if current_user%>
 <%=link_to 'Add Post', "/users/#{current_user.id}/posts/new"%>
+<% end %>
