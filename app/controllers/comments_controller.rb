@@ -5,9 +5,8 @@ class CommentsController < ApplicationController
   def index
     @comments = Post.find(params[:post_id]).comments
     respond_to do |format|
-      
-      format.xml  { render :xml => @comments }
-      format.json { render :json => @comments }
+      format.xml { render xml: @comments }
+      format.json { render json: @comments }
     end
   end
 
@@ -19,19 +18,18 @@ class CommentsController < ApplicationController
 
     if @comment.save
       respond_to do |format|
-        format.html 
-        format.xml  { render :xml => 'Comment added successfuly' }
-        format.json { render :json =>  flash[:success].to_s }
+        format.html
+        format.xml { render xml: 'Comment added successfuly' }
+        format.json { render json: flash[:success].to_s }
       end
     else
-      
+
       respond_to do |format|
         format.html { render :new }
-        format.xml  { render :xml => 'Error!!!' }
-        format.json { render :text => 'Error!!!' }
+        format.xml { render xml: 'Error!!!' }
+        format.json { render text: 'Error!!!' }
       end
     end
-    
   end
 
   def destroy

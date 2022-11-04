@@ -1,13 +1,12 @@
-# frozen_string_literal: true
-
 class Users::SessionsController < Devise::SessionsController
   skip_before_action :verify_authenticity_token
   respond_to :json
+
   private
 
   def respond_with(resource, _opts = {})
     render json: {
-      status: {code: 200, message: 'Logged in sucessfully.'},
+      status: { code: 200, message: 'Logged in sucessfully.' },
       data: UserSerializer.new(resource).serializable_hash[:data][:attributes]
     }, status: :ok
   end
@@ -16,7 +15,7 @@ class Users::SessionsController < Devise::SessionsController
     if current_user
       render json: {
         status: 200,
-        message: "logged out successfully"
+        message: 'logged out successfully'
       }, status: :ok
     else
       render json: {
@@ -45,7 +44,7 @@ class Users::SessionsController < Devise::SessionsController
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.
- def configure_sign_in_params
+  def configure_sign_in_params
     devise_parameter_sanitizer.permit(:sign_in, keys: [:post])
-   end
+  end
 end
