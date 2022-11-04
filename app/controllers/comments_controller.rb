@@ -18,9 +18,15 @@ class CommentsController < ApplicationController
 
     if @comment.save
       respond_to do |format|
+<<<<<<< Updated upstream
         format.html
         format.xml { render xml: 'Comment added successfuly' }
         format.json { render json: flash[:success].to_s }
+=======
+        format.html 
+        format.xml  { render :xml => flash[:success].to_s }
+        format.json { render :json =>  flash[:success].to_s }
+>>>>>>> Stashed changes
       end
     else
 
