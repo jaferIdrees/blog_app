@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'current_user/index'
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -17,11 +18,12 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get '/current_user', to: 'current_user#index'
   root 'users#index'
   delete 'users/:user_id/posts/:id', to: 'posts#destroy'
   resources :users, only: [:index, :show] do
     resources :posts, only: [:index, :new, :create, :show] do
-      resources :comments, only: [:create, :destroy]
+      resources :comments, only: [:index,:create, :destroy]
       resources :likes, only: [:create]
     end
   end

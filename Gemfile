@@ -52,6 +52,7 @@ gem 'bootsnap', require: false
 gem 'devise'
 gem 'devise-jwt'
 gem 'fast_jsonapi'
+gem 'rack-cors'
 
 # Use CanCanCan for authorization
 gem 'cancancan'
