@@ -1,7 +1,9 @@
 <h1>Listing Users</h1>
-<table>
+<div class="users_container">
   <tbody>
     <%= render @users %>
   </tbody>
-</table>
+</div>
+<% if current_user%>
 <%=link_to 'Add Post', "/users/#{current_user.id}/posts/new"%>
+<% end %>

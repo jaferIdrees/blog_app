@@ -1,10 +1,14 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  # load_and_authorize_resource
 
   def index
     @user = User.find(params[:user_id])
     @posts = User.find(params[:user_id]).posts
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml { render xml: @posts }
+      format.json { render json: @posts }
+    end
   end
 
   def show
@@ -23,8 +27,15 @@ class PostsController < ApplicationController
     post = Post.new(title: params[:post][:title], text: params[:post][:text], author: current_user)
     # respond_to block
     if post.save
-      flash[:success] = 'Post saved successfully'
-      redirect_to "/users/#{current_user.id}/posts"
+
+      respond_to do |format|
+        format.html do
+          flash[:success] = 'Post saved successfully'
+          redirect_to "/users/#{current_user.id}/posts"
+        end
+        format.xml { render xml: flash[:success] }
+        format.json { render json: flash[:success] }
+      end
     else
       flash.now[:error] = 'Error: Post could not be saved'
       render inline: '<p>Error: Post could not be saved<p>'
