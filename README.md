@@ -37,6 +37,7 @@
 ### API endpoints
 
 This API uses Devise-JWT for authentication, hence other than the signup and login requests each request should have a token.
+- After running the rails server, you can reach the below API end-points from the browser's console window (The same window where you see the localhost)
 - To signup a new user, a POST request should be sent to the API including at least the required three attributes (name, email and a password). As a result a new user will be created and a new token will be returned, use the below example:
 `fetch("http://127.0.0.1:3001/signup", {
   method: "post",
