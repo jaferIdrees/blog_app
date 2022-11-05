@@ -48,6 +48,9 @@ gem 'bootsnap', require: false
 # Use Sass to process CSS
 # gem "sassc-rails"
 
+# rswag API documentation
+gem 'rswag'
+
 # Use Devise for authentication
 gem 'devise'
 gem 'devise-jwt'
